@@ -23,16 +23,16 @@ const Header = () => (
 
 export default Header;
 
-const NavBar = styled.nav``;
+const NavBar = styled.nav`
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: wheat;
+`;
 
 const NavMenu = styled.ul`
   border: 1px solid black;
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-
-  li {
-    flex: 1;
-  }
+  display: grid;
 `;
