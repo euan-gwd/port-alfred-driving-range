@@ -50,17 +50,18 @@ export const queryname = graphql`
 `;
 
 const Wrapper = styled.div`
-  margin-bottom: 1.45rem;
+  margin: 0;
   overflow: hidden;
   position: relative;
   height: 100vh;
-  display: grid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Main = styled.main`
-  margin: 0 auto;
-  max-width: 960px;
-  padding: 0px 1.0875rem 1.45rem;
+  margin: 0;
+  padding: 0;
   position: relative;
   z-index: 2;
 `;
