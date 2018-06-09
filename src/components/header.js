@@ -33,4 +33,5 @@ const ImgBackDrop = css`
   height: 177px;
   grid-row: 1;
   grid-column: 1 / span 2;
+  z-index: 2;
 `;
