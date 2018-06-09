@@ -4,6 +4,7 @@ import Helmet from "react-helmet";
 import styled from "react-emotion";
 import Img from "gatsby-image";
 import "./index.css";
+import Header from "../components/header.js";
 
 const Layout = ({ children, data }) => (
   <Wrapper>
@@ -14,6 +15,7 @@ const Layout = ({ children, data }) => (
         { name: "keywords", content: "sample, something" },
       ]}
     />
+    <Header />
     <Main>{children()}</Main>
     <Img
       style={{
@@ -54,7 +56,7 @@ const Wrapper = styled.div`
   overflow: hidden;
   position: relative;
   height: 100vh;
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
 `;

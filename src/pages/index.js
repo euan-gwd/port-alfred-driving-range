@@ -1,14 +1,9 @@
 import React from "react";
 import Link from "gatsby-link";
-import styled, { css } from "react-emotion";
-import logo from "../images/logo.png";
+import styled from "react-emotion";
 
 const IndexPage = () => (
   <Container>
-    <MainLogo>
-      <div className={ImgBackDrop} />
-      <img src={logo} alt="logo" width="300" height="197" />
-    </MainLogo>
     <Intro>
       <p>
         Nestled amongst the rolling hills of the sleepy town of Port Alfred,
@@ -43,30 +38,6 @@ const Container = styled.div`
   display: grid;
   color: #064614;
   font: 18px "'Georgia Bold', Times, serif";
-`;
-
-const MainLogo = styled.div`
-  margin: 0;
-  padding: 0;
-  justify-self: center;
-  display: grid;
-  grid-template-rows: 200px;
-  grid-template-columns: repeat(2, 150px);
-
-  img {
-    grid-column: 1 / span 2;
-    grid-row: 1;
-    z-index: 3;
-  }
-`;
-
-const ImgBackDrop = css`
-  background-color: #f0fff085;
-  margin: 15px 0 0 5px;
-  width: 290px;
-  height: 177px;
-  grid-row: 1;
-  grid-column: 1 / span 2;
 `;
 
 const Intro = styled.div`

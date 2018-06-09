@@ -1,38 +1,36 @@
 import React from "react";
-import Link from "gatsby-link";
-import styled from "react-emotion";
+import styled, { css } from "react-emotion";
+import logo from "../images/logo.png";
 
 const Header = () => (
-  <NavBar>
-    <NavMenu>
-      <li>
-        <Link to="/">Home</Link>
-      </li>
-      <li>
-        <Link to="/about">About</Link>
-      </li>
-      <li>
-        <Link to="/services">Services</Link>
-      </li>
-      <li>
-        <Link to="/contact">Contact</Link>
-      </li>
-    </NavMenu>
-  </NavBar>
+  <MainLogo>
+    <div className={ImgBackDrop} />
+    <img src={logo} alt="logo" width="300" height="197" />
+  </MainLogo>
 );
 
 export default Header;
 
-const NavBar = styled.nav`
-  max-width: 1000px;
-  margin: 0 auto;
-  background-color: wheat;
-`;
-
-const NavMenu = styled.ul`
-  border: 1px solid black;
-  list-style: none;
+const MainLogo = styled.div`
   margin: 0;
   padding: 0;
+  justify-self: center;
   display: grid;
+  grid-template-rows: 200px;
+  grid-template-columns: repeat(2, 150px);
+
+  img {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    z-index: 3;
+  }
+`;
+
+const ImgBackDrop = css`
+  background-color: #f0fff085;
+  margin: 15px 0 0 5px;
+  width: 290px;
+  height: 177px;
+  grid-row: 1;
+  grid-column: 1 / span 2;
 `;
