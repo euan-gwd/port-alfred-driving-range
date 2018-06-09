@@ -1,6 +1,6 @@
 {
-  "name": "create-gatsby-site-starter",
-  "description": "Create Gatsby Site Starter",
+  "name": "port-alfred-driving-range-site",
+  "description": "Website for Port Alfred Driving Range",
   "version": "1.0.0",
   "author": "Euan Greenwood",
   "dependencies": {
