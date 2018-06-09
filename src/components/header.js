@@ -15,6 +15,7 @@ const MainLogo = styled.div`
   margin: 0;
   padding: 0;
   justify-self: center;
+  align-self: center;
   display: grid;
   grid-template-rows: 200px;
   grid-template-columns: repeat(2, 150px);

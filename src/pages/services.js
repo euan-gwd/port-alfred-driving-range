@@ -2,9 +2,9 @@ import React from "react";
 import Link from "gatsby-link";
 import styled from "react-emotion";
 
-const IndexPage = () => (
+const ServicesPage = () => (
   <Container>
-    <Intro>
+    <Content>
       <p>
         Nestled amongst the rolling hills of the sleepy town of Port Alfred,
         lies a driving range that shares its namesake. Come join us for a great
@@ -20,15 +20,14 @@ const IndexPage = () => (
         The Port Alfred Driving Range is conveniently located behind the
         Rosehill Mall.
       </p>
-    </Intro>
+    </Content>
     <NavBar>
-      <NavLink to="/services/">Services</NavLink>
-      <NavLink to="/page-2/">Contact</NavLink>
+      <NavLink to="/">back to the homepage</NavLink>
     </NavBar>
   </Container>
 );
 
-export default IndexPage;
+export default ServicesPage;
 
 const Container = styled.div`
   padding: 0;
@@ -39,7 +38,7 @@ const Container = styled.div`
   font: 18px "'Georgia Bold', Times, serif";
 `;
 
-const Intro = styled.section`
+const Content = styled.section`
   background-color: #f0fff085;
   border: 3px solid #064614;
   border-radius: 2px;
@@ -60,7 +59,6 @@ const NavBar = styled.nav`
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
 `;
 
 const NavLink = styled(Link)`
@@ -68,10 +66,6 @@ const NavLink = styled(Link)`
   color: #064614;
   font: small-caps bold 18px "'Georgia Bold', Times, serif";
   padding: 0.5rem;
-
-  :first-of-type {
-    border-right: 3px solid #064614;
-  }
 
   :hover {
     color: #678c68;
