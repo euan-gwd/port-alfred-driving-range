@@ -5,21 +5,30 @@ import styled from "react-emotion";
 const ServicesPage = () => (
   <Container>
     <Content>
-      <p>
-        Nestled amongst the rolling hills of the sleepy town of Port Alfred,
-        lies a driving range that shares its namesake. Come join us for a great
-        day out, bring your own golf clubs, hit some golf balls. <br /> Golf
-        Clubs are also available for hire as well.
-      </p>
-      <p>
-        Our conversant and neighborly golf pro Colin Mavuso is on hand to
-        provide conversation and guidance. Private lessons are available on
-        request.
-      </p>
-      <p>
-        The Port Alfred Driving Range is conveniently located behind the
-        Rosehill Mall.
-      </p>
+      <article>
+        <h3>Operating Hours</h3>
+        <h4>Summer</h4>
+        <p>
+          Monday - Saturday <span>09:00 - 18:00</span>
+        </p>
+        <p>
+          Sunday <span>09:00 - 16:00</span>
+        </p>
+      </article>
+      <article>
+        <h4>Winter</h4>
+        <p>
+          Monday - Saturday <span>09:00 - 16:00</span>
+        </p>
+        <p>
+          Sunday <span>09:00 - 14:00</span>
+        </p>
+      </article>
+      <article>
+        <h3>Prices</h3>
+        <p>R30 per tray (50 balls)</p>
+        <p>R150 per session (Private Coaching Lessons) </p>
+      </article>
     </Content>
     <NavBar>
       <NavLink to="/">back to the homepage</NavLink>
@@ -47,6 +56,15 @@ const Content = styled.section`
   text-align: center;
   margin: 0;
   padding: 0.5rem;
+
+  h3 {
+    padding: 0.25rem 0;
+    text-transform: uppercase;
+  }
+
+  p {
+    line-height: 0.5rem;
+  }
 `;
 
 const NavBar = styled.nav`
@@ -64,7 +82,8 @@ const NavBar = styled.nav`
 const NavLink = styled(Link)`
   text-align: center;
   color: #064614;
-  font: small-caps bold 18px "'Georgia Bold', Times, serif";
+  font: bold 16px "'Georgia Bold', Times, serif";
+  text-transform: uppercase;
   padding: 0.5rem;
 
   :hover {

@@ -66,7 +66,8 @@ const NavBar = styled.nav`
 const NavLink = styled(Link)`
   text-align: center;
   color: #064614;
-  font: small-caps bold 18px "'Georgia Bold', Times, serif";
+  font: bold 16px "'Georgia Bold', Times, serif";
+  text-transform: uppercase;
   padding: 0.5rem;
 
   :first-of-type {

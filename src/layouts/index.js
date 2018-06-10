@@ -57,7 +57,7 @@ const Wrapper = styled.div`
   position: relative;
   height: 100vh;
   display: grid;
-  grid-template-rows: 250px auto 1fr;
+  grid-template-rows: 200px auto 1fr;
   justify-content: center;
 `;
 
