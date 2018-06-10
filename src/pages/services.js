@@ -4,6 +4,9 @@ import styled from "react-emotion";
 
 const ServicesPage = () => (
   <Container>
+    <NavBar>
+      <NavLink to="/">back</NavLink>
+    </NavBar>
     <Content>
       <article>
         <h3>Operating Hours</h3>
@@ -30,9 +33,6 @@ const ServicesPage = () => (
         <p>R150 per session (Private Coaching Lessons) </p>
       </article>
     </Content>
-    <NavBar>
-      <NavLink to="/">back to the homepage</NavLink>
-    </NavBar>
   </Container>
 );
 
@@ -44,15 +44,13 @@ const Container = styled.div`
   width: 60vw;
   display: grid;
   color: #064614;
+  background-color: #f0fff085;
+  border: 3px solid #064614;
+  border-radius: 2px;
   font: 18px "'Georgia Bold', Times, serif";
 `;
 
 const Content = styled.section`
-  background-color: #f0fff085;
-  border: 3px solid #064614;
-  border-radius: 2px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
   text-align: center;
   margin: 0;
   padding: 0.5rem;
@@ -68,19 +66,11 @@ const Content = styled.section`
 `;
 
 const NavBar = styled.nav`
-  color: #064614;
-  background-color: #f0fff075;
-  border-top: none;
-  border-bottom: 3px solid #064614;
-  border-left: 3px solid #064614;
-  border-right: 3px solid #064614;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
   display: grid;
 `;
 
 const NavLink = styled(Link)`
-  text-align: center;
+  text-align: right;
   color: #064614;
   font: bold 16px "'Georgia Bold', Times, serif";
   text-transform: uppercase;
