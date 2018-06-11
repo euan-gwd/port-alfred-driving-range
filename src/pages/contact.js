@@ -145,7 +145,7 @@ const FormField = styled.div`
     }
   }
 
-  input textarea {
+  textarea {
     color: #064614;
     outline: none;
 
@@ -162,18 +162,17 @@ const FormActions = styled.div`
 
   input[type="submit"],
   input[type="reset"] {
-    color: #064614;
-    background-color: transparent;
-    border: 3px solid #064614;
-    border-radius: 4px;
     font: bold 18px "'Georgia Bold', Times, serif";
+    color: #064614;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 3px solid transparent;
     margin: 0;
     padding: 0.125rem 0.25rem 0;
 
     :hover {
       color: #678c68;
-      border: 3px solid #678c68;
-      border-radius: 4px;
+      text-decoration: underline;
     }
   }
 `;
