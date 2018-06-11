@@ -52,7 +52,6 @@ const ContactPage = () => (
               color="#064614"
             />
           </SocialLink>
-
           <SocialLink href="#">
             <FontAwesomeIcon
               icon={["fab", "instagram"]}
@@ -60,7 +59,6 @@ const ContactPage = () => (
               color="#064614"
             />
           </SocialLink>
-
           <SocialLink href="tel:+27735077260‬">
             <FontAwesomeIcon icon="phone-square" size="2x" color="#064614" />
           </SocialLink>
@@ -101,7 +99,7 @@ const Heading = styled.h2`
 const NavLink = styled(Link)`
   text-align: right;
   color: #064614;
-  font: bold 16px "'Georgia Bold', Times, serif";
+  font: bold 18px "'Georgia Bold', Times, serif";
   text-transform: uppercase;
   padding: 0.25rem 0.5rem 0;
 
@@ -153,7 +151,7 @@ const FormField = styled.div`
     }
   }
 
-  textarea {
+  input textarea {
     color: #064614;
     outline: none;
 
@@ -167,6 +165,25 @@ const FormField = styled.div`
 const FormActions = styled.div`
   display: flex;
   justify-content: space-around;
+
+  input[type="submit"],
+  input[type="reset"] {
+    color: #064614;
+    background-color: transparent;
+    border: 3px solid #064614;
+    border-radius: 4px;
+    font: bold 18px "'Georgia Bold', Times, serif";
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0.125rem 0.25rem 0;
+
+    :hover {
+      color: #678c68;
+      background-color: #064614;
+      border: 3px solid #678c68;
+      border-radius: 4px;
+    }
+  }
 `;
 
 const Social = styled.article`
