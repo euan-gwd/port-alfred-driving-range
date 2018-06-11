@@ -23,7 +23,7 @@ const IndexPage = () => (
     </Intro>
     <NavBar>
       <NavLink to="/services/">Services</NavLink>
-      <NavLink to="/page-2/">Contact</NavLink>
+      <NavLink to="/contact/">Contact</NavLink>
     </NavBar>
   </Container>
 );
