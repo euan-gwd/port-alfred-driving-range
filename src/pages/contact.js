@@ -2,11 +2,12 @@ import React from "react";
 import Link from "gatsby-link";
 import styled from "react-emotion";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import { MapComponent } from "../components/MapContainer.js";
+import { MapContainer } from "../components/MapContainer.js";
 
 const ContactPage = () => (
   <Container>
     <NavBar>
+      <Heading>Contact</Heading>
       <NavLink to="/">
         <FontAwesomeIcon
           icon={["far", "window-close"]}
@@ -17,32 +18,27 @@ const ContactPage = () => (
     </NavBar>
     <Content>
       <ContactForm>
-        <h4>Contact</h4>
-        <form>
-          <div>
+        <Form>
+          <FormField>
             <label htmlFor="name">Name</label>
             <input type="text" name="name" id="name" />
-          </div>
-          <div>
+          </FormField>
+          <FormField>
             <label htmlFor="email">Email</label>
             <input type="text" name="email" id="email" />
-          </div>
-          <div>
+          </FormField>
+          <FormField>
             <label htmlFor="message">Message</label>
-            <textarea name="message" id="message" rows="4" />
-          </div>
-          <ul>
-            <li>
-              <input type="submit" value="Send Message" />
-            </li>
-            <li>
-              <input type="reset" value="Reset" />
-            </li>
-          </ul>
-        </form>
+            <textarea name="message" id="message" />
+          </FormField>
+          <FormField>
+            <input type="submit" value="Send Message" />
+            <input type="reset" value="Reset" />
+          </FormField>
+        </Form>
       </ContactForm>
       <Social>
-        <MapComponent
+        <MapContainer
           googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
           loadingElement={<div style={{ height: `100%` }} />}
           containerElement={<div style={{ height: `200px` }} />}
@@ -88,11 +84,19 @@ const Container = styled.div`
   display: grid;
 `;
 
+const Heading = styled.h2`
+  color: #064614;
+  padding: 0.5rem 0 0;
+  font: "'Georgia Bold', Times, serif";
+  justify-self: center;
+  align-self: center;
+`;
+
 const Content = styled.section`
   margin: 0;
-  padding: 0.5rem;
+  padding: 0 0.5rem;
   display: grid;
-  grid-template-columns: repeat(2 minmax(100px, max-content));
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
   grid-column-gap: 0.5rem;
 `;
 
@@ -100,6 +104,12 @@ const ContactForm = styled.article`
   grid-row: 1;
   grid-column: 1;
   border-right: 3px solid #064614;
+  padding: 0 0.5rem;
+`;
+
+const Form = styled.form``;
+const FormField = styled.div`
+  display: flex;
 `;
 
 const Social = styled.article`
@@ -112,6 +122,7 @@ const SocialLinkBar = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding: 0.5rem 0;
 `;
 
 const SocialLink = styled.a`
@@ -121,6 +132,7 @@ const SocialLink = styled.a`
 
 const NavBar = styled.nav`
   display: grid;
+  grid-template-columns: 1fr 1fr;
 `;
 
 const NavLink = styled(Link)`
