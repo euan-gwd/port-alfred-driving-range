@@ -17,26 +17,26 @@ const ContactPage = () => (
       </NavLink>
     </NavBar>
     <Content>
-      <ContactForm>
+      <ContactFormWrapper>
         <Form>
           <FormField>
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name">Name:</label>
             <input type="text" name="name" id="name" />
           </FormField>
           <FormField>
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">Email:</label>
             <input type="text" name="email" id="email" />
           </FormField>
           <FormField>
-            <label htmlFor="message">Message</label>
+            <label htmlFor="message">Message:</label>
             <textarea name="message" id="message" />
           </FormField>
-          <FormField>
+          <FormActions>
             <input type="submit" value="Send Message" />
             <input type="reset" value="Reset" />
-          </FormField>
+          </FormActions>
         </Form>
-      </ContactForm>
+      </ContactFormWrapper>
       <Social>
         <MapContainer
           googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
@@ -84,12 +84,30 @@ const Container = styled.div`
   display: grid;
 `;
 
+const NavBar = styled.nav`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+`;
+
 const Heading = styled.h2`
   color: #064614;
   padding: 0.5rem 0 0;
-  font: "'Georgia Bold', Times, serif";
   justify-self: center;
   align-self: center;
+  text-transform: uppercase;
+  text-decoration: underline;
+`;
+
+const NavLink = styled(Link)`
+  text-align: right;
+  color: #064614;
+  font: bold 16px "'Georgia Bold', Times, serif";
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem 0;
+
+  :hover {
+    color: #678c68;
+  }
 `;
 
 const Content = styled.section`
@@ -100,16 +118,55 @@ const Content = styled.section`
   grid-column-gap: 0.5rem;
 `;
 
-const ContactForm = styled.article`
+const ContactFormWrapper = styled.article`
   grid-row: 1;
   grid-column: 1;
   border-right: 3px solid #064614;
-  padding: 0 0.5rem;
+  padding: 0 0.5rem 0.5rem;
 `;
 
-const Form = styled.form``;
+const Form = styled.form`
+  display: grid;
+  grid-template-rows: repeat(4 minmax(150px, 1fr));
+  grid-row-gap: 0.5rem;
+`;
+
 const FormField = styled.div`
+  display: grid;
+  font: 18px "'Georgia Bold', Times, serif";
+  color: #064614;
+
+  label {
+    grid-row: 1;
+    margin: 0.5rem 0 -0.2rem;
+    font: bold 18px "'Georgia Bold', Times, serif";
+  }
+
+  input {
+    grid-row: 2;
+    color: #064614;
+    outline: none;
+
+    :focus {
+      color: #678c68;
+      border: 2px solid #678c68;
+    }
+  }
+
+  textarea {
+    color: #064614;
+    outline: none;
+
+    :focus {
+      color: #678c68;
+      border: 2px solid #678c68;
+    }
+  }
+`;
+
+const FormActions = styled.div`
   display: flex;
+  justify-content: space-around;
 `;
 
 const Social = styled.article`
@@ -127,20 +184,7 @@ const SocialLinkBar = styled.div`
 
 const SocialLink = styled.a`
   color: #064614;
-  font: 16px "'Georgia Bold', Times, serif";
-`;
-
-const NavBar = styled.nav`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-`;
-
-const NavLink = styled(Link)`
-  text-align: right;
-  color: #064614;
-  font: bold 16px "'Georgia Bold', Times, serif";
-  text-transform: uppercase;
-  padding: 0.25rem 0.5rem 0;
+  font: 18px "'Georgia Bold', Times, serif";
 
   :hover {
     color: #678c68;

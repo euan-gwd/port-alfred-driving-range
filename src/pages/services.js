@@ -6,6 +6,7 @@ import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 const ServicesPage = () => (
   <Container>
     <NavBar>
+      <Heading>Services</Heading>
       <NavLink to="/">
         <FontAwesomeIcon
           icon={["far", "window-close"]}
@@ -57,6 +58,32 @@ const Container = styled.div`
   font: 18px "'Georgia Bold', Times, serif";
 `;
 
+const NavBar = styled.nav`
+  display: grid;
+  grid-template-columns: 1fr 0.7fr;
+`;
+
+const Heading = styled.h2`
+  color: #064614;
+  padding: 0.5rem 0 0;
+  text-align: right;
+  align-self: center;
+  text-transform: uppercase;
+  text-decoration: underline;
+`;
+
+const NavLink = styled(Link)`
+  text-align: right;
+  color: #064614;
+  font: bold 16px "'Georgia Bold', Times, serif";
+  text-transform: uppercase;
+  padding: 0.5rem;
+
+  :hover {
+    color: #678c68;
+  }
+`;
+
 const Content = styled.section`
   text-align: center;
   margin: 0;
@@ -69,21 +96,5 @@ const Content = styled.section`
 
   p {
     line-height: 0.5rem;
-  }
-`;
-
-const NavBar = styled.nav`
-  display: grid;
-`;
-
-const NavLink = styled(Link)`
-  text-align: right;
-  color: #064614;
-  font: bold 16px "'Georgia Bold', Times, serif";
-  text-transform: uppercase;
-  padding: 0.5rem;
-
-  :hover {
-    color: #678c68;
   }
 `;
