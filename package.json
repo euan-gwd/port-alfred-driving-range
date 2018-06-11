@@ -4,6 +4,11 @@
   "version": "1.0.0",
   "author": "Euan Greenwood",
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free-brands": "^5.0.13",
+    "@fortawesome/fontawesome-free-regular": "^5.0.13",
+    "@fortawesome/fontawesome-free-solid": "^5.0.13",
+    "@fortawesome/react-fontawesome": "^0.0.20",
     "gatsby": "^1.9.270",
     "gatsby-image": "^1.0.52",
     "gatsby-link": "^1.6.44",
@@ -15,6 +20,7 @@
     "gatsby-plugin-sharp": "^1.6.47",
     "gatsby-source-filesystem": "^1.5.38",
     "gatsby-transformer-sharp": "^1.6.26",
+    "react-google-maps": "^9.4.5",
     "react-helmet": "^5.2.0"
   },
   "keywords": [

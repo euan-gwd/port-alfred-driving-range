@@ -1,11 +1,18 @@
 import React from "react";
 import Link from "gatsby-link";
 import styled from "react-emotion";
+import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 
 const ServicesPage = () => (
   <Container>
     <NavBar>
-      <NavLink to="/">back</NavLink>
+      <NavLink to="/">
+        <FontAwesomeIcon
+          icon={["far", "window-close"]}
+          size="2x"
+          color="#064614"
+        />
+      </NavLink>
     </NavBar>
     <Content>
       <article>

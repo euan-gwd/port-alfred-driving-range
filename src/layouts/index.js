@@ -6,6 +6,18 @@ import Img from "gatsby-image";
 import "./index.css";
 import Header from "../components/header.js";
 
+import fontawesome from "@fortawesome/fontawesome";
+import faWindowClose from "@fortawesome/fontawesome-free-regular/faWindowClose";
+import faPhoneSquare from "@fortawesome/fontawesome-free-solid/faPhoneSquare";
+import faFacebookSquare from "@fortawesome/fontawesome-free-brands/faFacebookSquare";
+import faInstagram from "@fortawesome/fontawesome-free-brands/faInstagram";
+fontawesome.library.add(
+  faFacebookSquare,
+  faInstagram,
+  faWindowClose,
+  faPhoneSquare
+);
+
 const Layout = ({ children, data }) => (
   <Wrapper>
     <Helmet

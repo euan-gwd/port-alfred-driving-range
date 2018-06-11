@@ -1,37 +1,69 @@
 import React from "react";
 import Link from "gatsby-link";
 import styled from "react-emotion";
+import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 
 const ContactPage = () => (
   <Container>
     <NavBar>
-      <NavLink to="/">back</NavLink>
+      <NavLink to="/">
+        <FontAwesomeIcon
+          icon={["far", "window-close"]}
+          size="2x"
+          color="#064614"
+        />
+      </NavLink>
     </NavBar>
     <Content>
-      <article>
-        <h3>Operating Hours</h3>
-        <h4>Summer</h4>
-        <p>
-          Monday - Saturday <span>09:00 - 18:00</span>
-        </p>
-        <p>
-          Sunday <span>09:00 - 16:00</span>
-        </p>
-      </article>
-      <article>
-        <h4>Winter</h4>
-        <p>
-          Monday - Saturday <span>09:00 - 16:00</span>
-        </p>
-        <p>
-          Sunday <span>09:00 - 14:00</span>
-        </p>
-      </article>
-      <article>
-        <h3>Prices</h3>
-        <p>R30 per tray (50 balls)</p>
-        <p>R150 per session (Private Coaching Lessons) </p>
-      </article>
+      <ContactForm>
+        <h4>Contact</h4>
+        <form>
+          <div>
+            <label htmlFor="name">Name</label>
+            <input type="text" name="name" id="name" />
+          </div>
+          <div>
+            <label htmlFor="email">Email</label>
+            <input type="text" name="email" id="email" />
+          </div>
+          <div>
+            <label htmlFor="message">Message</label>
+            <textarea name="message" id="message" rows="4" />
+          </div>
+          <ul>
+            <li>
+              <input type="submit" value="Send Message" />
+            </li>
+            <li>
+              <input type="reset" value="Reset" />
+            </li>
+          </ul>
+        </form>
+      </ContactForm>
+      <Social>
+        <h4>Directions</h4>
+        <SocialLinkBar>
+          <SocialLink href="https://www.facebook.com/Port-Alfred-Driving-Range-1242566729088163/">
+            <FontAwesomeIcon
+              icon={["fab", "facebook-square"]}
+              size="2x"
+              color="#064614"
+            />
+          </SocialLink>
+
+          <SocialLink href="#">
+            <FontAwesomeIcon
+              icon={["fab", "instagram"]}
+              size="2x"
+              color="#064614"
+            />
+          </SocialLink>
+
+          <SocialLink href="tel:+27735077260‬">
+            <FontAwesomeIcon icon="phone-square" size="2x" color="#064614" />
+          </SocialLink>
+        </SocialLinkBar>
+      </Social>
     </Content>
   </Container>
 );
@@ -42,27 +74,43 @@ const Container = styled.div`
   padding: 0;
   min-width: 320px;
   width: 60vw;
-  display: grid;
   color: #064614;
   background-color: #f0fff085;
   border: 3px solid #064614;
   border-radius: 2px;
   font: 18px "'Georgia Bold', Times, serif";
+  display: grid;
 `;
 
 const Content = styled.section`
-  text-align: center;
   margin: 0;
   padding: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(2 minmax(150px, max-content));
+  grid-column-gap: 0.5rem;
+`;
 
-  h3 {
-    padding: 0.25rem 0;
-    text-transform: uppercase;
-  }
+const ContactForm = styled.article`
+  grid-row: 1;
+  grid-column: 1;
+  border-right: 3px solid #064614;
+`;
 
-  p {
-    line-height: 0.5rem;
-  }
+const Social = styled.article`
+  grid-row: 1;
+  grid-column: 2;
+  display: grid;
+`;
+
+const SocialLinkBar = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+`;
+
+const SocialLink = styled.a`
+  color: #064614;
+  font: 16px "'Georgia Bold', Times, serif";
 `;
 
 const NavBar = styled.nav`
