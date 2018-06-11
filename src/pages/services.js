@@ -8,11 +8,7 @@ const ServicesPage = () => (
     <NavBar>
       <Heading>Services</Heading>
       <NavLink to="/">
-        <FontAwesomeIcon
-          icon={["far", "window-close"]}
-          size="2x"
-          color="#064614"
-        />
+        <StyledIcon icon={["far", "window-close"]} size="2x" color="#064614" />
       </NavLink>
     </NavBar>
     <Content>
@@ -78,7 +74,9 @@ const NavLink = styled(Link)`
   font: bold 16px "'Georgia Bold', Times, serif";
   text-transform: uppercase;
   padding: 0.5rem;
+`;
 
+const StyledIcon = styled(FontAwesomeIcon)`
   :hover {
     color: #678c68;
   }

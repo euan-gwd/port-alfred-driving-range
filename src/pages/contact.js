@@ -9,11 +9,7 @@ const ContactPage = () => (
     <NavBar>
       <Heading>Contact</Heading>
       <NavLink to="/">
-        <FontAwesomeIcon
-          icon={["far", "window-close"]}
-          size="2x"
-          color="#064614"
-        />
+        <StyledIcon icon={["far", "window-close"]} size="2x" color="#064614" />
       </NavLink>
     </NavBar>
     <Content>
@@ -46,21 +42,17 @@ const ContactPage = () => (
         />
         <SocialLinkBar>
           <SocialLink href="https://www.facebook.com/Port-Alfred-Driving-Range-1242566729088163/">
-            <FontAwesomeIcon
+            <StyledIcon
               icon={["fab", "facebook-square"]}
               size="2x"
               color="#064614"
             />
           </SocialLink>
           <SocialLink href="#">
-            <FontAwesomeIcon
-              icon={["fab", "instagram"]}
-              size="2x"
-              color="#064614"
-            />
+            <StyledIcon icon={["fab", "instagram"]} size="2x" color="#064614" />
           </SocialLink>
           <SocialLink href="tel:+27735077260‬">
-            <FontAwesomeIcon icon="phone-square" size="2x" color="#064614" />
+            <StyledIcon icon="phone-square" size="2x" color="#064614" />
           </SocialLink>
         </SocialLinkBar>
       </Social>
@@ -99,10 +91,12 @@ const Heading = styled.h2`
 const NavLink = styled(Link)`
   text-align: right;
   color: #064614;
-  font: bold 18px "'Georgia Bold', Times, serif";
+  font: 16px "'Georgia Bold', Times, serif";
   text-transform: uppercase;
   padding: 0.25rem 0.5rem 0;
+`;
 
+const StyledIcon = styled(FontAwesomeIcon)`
   :hover {
     color: #678c68;
   }
@@ -173,13 +167,11 @@ const FormActions = styled.div`
     border: 3px solid #064614;
     border-radius: 4px;
     font: bold 18px "'Georgia Bold', Times, serif";
-    text-transform: uppercase;
     margin: 0;
     padding: 0.125rem 0.25rem 0;
 
     :hover {
       color: #678c68;
-      background-color: #064614;
       border: 3px solid #678c68;
       border-radius: 4px;
     }
