@@ -92,7 +92,7 @@ const Content = styled.section`
   margin: 0;
   padding: 0.5rem;
   display: grid;
-  grid-template-columns: repeat(2 minmax(150px, max-content));
+  grid-template-columns: repeat(2 minmax(100px, max-content));
   grid-column-gap: 0.5rem;
 `;
 
@@ -128,7 +128,7 @@ const NavLink = styled(Link)`
   color: #064614;
   font: bold 16px "'Georgia Bold', Times, serif";
   text-transform: uppercase;
-  padding: 0.5rem;
+  padding: 0.25rem 0.5rem 0;
 
   :hover {
     color: #678c68;
