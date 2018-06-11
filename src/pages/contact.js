@@ -2,6 +2,7 @@ import React from "react";
 import Link from "gatsby-link";
 import styled from "react-emotion";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+import { MapComponent } from "../components/MapContainer.js";
 
 const ContactPage = () => (
   <Container>
@@ -41,7 +42,12 @@ const ContactPage = () => (
         </form>
       </ContactForm>
       <Social>
-        <h4>Directions</h4>
+        <MapComponent
+          googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+          loadingElement={<div style={{ height: `100%` }} />}
+          containerElement={<div style={{ height: `200px` }} />}
+          mapElement={<div style={{ height: `100%` }} />}
+        />
         <SocialLinkBar>
           <SocialLink href="https://www.facebook.com/Port-Alfred-Driving-Range-1242566729088163/">
             <FontAwesomeIcon
