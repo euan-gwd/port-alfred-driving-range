@@ -2,11 +2,12 @@ import React from "react";
 import Link from "gatsby-link";
 import styled from "react-emotion";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import Header from "../components/header.js";
+// import Header from "../components/header.js";
+import Logo from "../images/logo.png";
 
 const ServicesPage = () => (
   <PageContent>
-    <Header />
+    <BrandLogo src={Logo} />
     <Content>
       <h3>Operating Hours</h3>
       <TimesWrapper>
@@ -55,6 +56,16 @@ const PageContent = styled.div`
   border-radius: 2px;
   font: 18px "'Georgia Bold', Times, serif";
   display: grid;
+`;
+
+const BrandLogo = styled.img`
+  z-index: 3;
+  width: 30vmin;
+  height: 20vmin;
+  margin: 0;
+  padding: 0;
+  justify-self: center;
+  align-self: center;
 `;
 
 const NavBar = styled.nav`
