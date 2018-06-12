@@ -34,7 +34,7 @@ const ServicesPage = () => (
       <article>
         <h3>Prices</h3>
         <p>R30 per tray (50 balls)</p>
-        <p>R150 per session (Private Coaching Lessons) </p>
+        <p>R150 per lesson (Private Coaching)</p>
       </article>
     </Content>
   </Container>
@@ -56,13 +56,14 @@ const Container = styled.div`
 
 const NavBar = styled.nav`
   display: grid;
-  grid-template-columns: 1fr 0.7fr;
+  grid-template-columns: 1fr 0.02fr;
+  margin: 0;
 `;
 
 const Heading = styled.h2`
   color: #064614;
-  padding: 0.5rem 0 0;
-  text-align: right;
+  padding: 0.5rem 0 0 0;
+  text-align: center;
   align-self: center;
   text-transform: uppercase;
   text-decoration: underline;
