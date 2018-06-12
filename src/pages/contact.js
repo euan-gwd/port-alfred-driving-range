@@ -66,13 +66,18 @@ export default ContactPage;
 const Container = styled.div`
   padding: 0;
   min-width: 320px;
-  width: 60vw;
+  width: 80vw;
   color: #064614;
   background-color: #f0fff085;
   border: 3px solid #064614;
   border-radius: 2px;
   font: 18px "'Georgia Bold', Times, serif";
   display: grid;
+
+  @media screen and (max-width: 480px) {
+    width: 60vw;
+    padding: 0 0.5rem;
+  }
 `;
 
 const NavBar = styled.nav`
