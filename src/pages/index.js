@@ -37,6 +37,10 @@ const Container = styled.div`
   display: grid;
   color: #064614;
   font: 18px "'Georgia Bold', Times, serif";
+
+  @media screen and (max-width: 480px) {
+    width: 90vw;
+  }
 `;
 
 const Intro = styled.section`

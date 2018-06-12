@@ -12,9 +12,9 @@ const ContactPage = () => (
         <StyledIcon icon={["far", "window-close"]} size="2x" color="#064614" />
       </NavLink>
     </NavBar>
-    <Content>
+    <PageContent>
       <ContactFormWrapper>
-        <Form>
+        <Form action="#">
           <FormField>
             <label htmlFor="name">Name:</label>
             <input type="text" name="name" id="name" />
@@ -27,13 +27,14 @@ const ContactPage = () => (
             <label htmlFor="message">Message:</label>
             <textarea name="message" id="message" />
           </FormField>
+          <div data-netlify-recaptcha />
           <FormActions>
             <input type="submit" value="Send Message" />
             <input type="reset" value="Reset" />
           </FormActions>
         </Form>
       </ContactFormWrapper>
-      <Social>
+      <SocialWrapper>
         <MapContainer
           googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
           loadingElement={<div style={{ height: `100%` }} />}
@@ -55,8 +56,8 @@ const ContactPage = () => (
             <StyledIcon icon="phone-square" size="2x" color="#064614" />
           </SocialLink>
         </SocialLinkBar>
-      </Social>
-    </Content>
+      </SocialWrapper>
+    </PageContent>
   </Container>
 );
 
@@ -102,24 +103,27 @@ const StyledIcon = styled(FontAwesomeIcon)`
   }
 `;
 
-const Content = styled.section`
+const PageContent = styled.section`
   margin: 0;
-  padding: 0 0.5rem;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(150px, 1fr));
-  grid-column-gap: 0.5rem;
+  padding: 0 0.125rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 `;
 
 const ContactFormWrapper = styled.article`
-  grid-row: 1;
-  grid-column: 1;
-  border-right: 3px solid #064614;
   padding: 0 0.5rem 0.5rem;
+  min-width: 50%;
+  border-right: 3px solid #064614;
+
+  @media screen and (max-width: 860px) {
+    border: 0;
+  }
 `;
 
 const Form = styled.form`
   display: grid;
-  grid-template-rows: repeat(4 minmax(150px, 1fr));
+  grid-template-rows: repeat(5 minmax(150px, 1fr));
   grid-row-gap: 0.5rem;
 `;
 
@@ -177,10 +181,15 @@ const FormActions = styled.div`
   }
 `;
 
-const Social = styled.article`
-  grid-row: 1;
-  grid-column: 2;
+const SocialWrapper = styled.article`
+  padding: 0 0.5rem;
+  min-width: 50%;
   display: grid;
+
+  @media screen and (max-width: 480px) {
+    width: 100%;
+    padding: 0 0.5rem;
+  }
 `;
 
 const SocialLinkBar = styled.div`

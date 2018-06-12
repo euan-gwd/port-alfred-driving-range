@@ -35,7 +35,9 @@ const Layout = ({ children, data }) => (
         left: 0,
         top: 0,
         width: "100%",
-        height: "100%",
+        height: "100vh",
+        objectFit: "cover",
+        objectPosition: "center center",
       }}
       sizes={data.background.sizes}
     />
@@ -69,12 +71,12 @@ const Wrapper = styled.div`
   position: relative;
   height: 100vh;
   display: grid;
-  grid-template-rows: 200px auto 1fr;
+  grid-template-rows: 1fr 2fr;
   justify-content: center;
 `;
 
 const Main = styled.main`
-  margin: 0;
+  margin: 0 0 1rem;
   padding: 0;
   position: relative;
   z-index: 2;
