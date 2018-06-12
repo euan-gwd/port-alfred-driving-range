@@ -4,7 +4,7 @@ import styled from "react-emotion";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 
 const ServicesPage = () => (
-  <Container>
+  <PageContent>
     <NavBar>
       <Heading>Services</Heading>
       <NavLink to="/">
@@ -37,21 +37,21 @@ const ServicesPage = () => (
         <p>R150 per lesson (Private Coaching)</p>
       </article>
     </Content>
-  </Container>
+  </PageContent>
 );
 
 export default ServicesPage;
 
-const Container = styled.div`
+const PageContent = styled.div`
   padding: 0;
   min-width: 320px;
   width: 60vw;
-  display: grid;
   color: #064614;
   background-color: #f0fff085;
   border: 3px solid #064614;
   border-radius: 2px;
   font: 18px "'Georgia Bold', Times, serif";
+  display: grid;
 `;
 
 const NavBar = styled.nav`

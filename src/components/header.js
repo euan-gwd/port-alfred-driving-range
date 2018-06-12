@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "react-emotion";
-import logo from "../images/logo.png";
+import logo from "../images/logo-alt.png";
 
 const Header = () => (
   <MainLogo>
@@ -21,12 +21,7 @@ const MainLogo = styled.div`
     grid-column: 1 / span 2;
     grid-row: 1;
     z-index: 3;
-    width: calc(300px / 1.75);
-    height: calc(197px / 1.75);
-
-    @media screen and (min-width: 860px) {
-      width: 300px;
-      height: 197px;
-    }
+    width: 300px;
+    height: 197px;
   }
 `;

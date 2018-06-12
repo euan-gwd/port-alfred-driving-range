@@ -1,9 +1,11 @@
 import React from "react";
 import Link from "gatsby-link";
 import styled from "react-emotion";
+import Header from "../components/header.js";
 
 const IndexPage = () => (
   <Container>
+    <Header />
     <Intro>
       <p>
         Nestled amongst the rolling hills of the sleepy town of Port Alfred,

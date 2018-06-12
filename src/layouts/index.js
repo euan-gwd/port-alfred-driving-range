@@ -4,7 +4,6 @@ import Helmet from "react-helmet";
 import styled from "react-emotion";
 import Img from "gatsby-image";
 import "./index.css";
-import Header from "../components/header.js";
 
 import fontawesome from "@fortawesome/fontawesome";
 import faWindowClose from "@fortawesome/fontawesome-free-regular/faWindowClose";
@@ -27,7 +26,6 @@ const Layout = ({ children, data }) => (
         { name: "keywords", content: "sample, something" },
       ]}
     />
-    <Header />
     <Main>{children()}</Main>
     <Img
       style={{
@@ -70,9 +68,9 @@ const Wrapper = styled.div`
   overflow: hidden;
   position: relative;
   height: 100vh;
-  display: grid;
-  grid-template-rows: 1fr 2fr;
+  display: flex;
   justify-content: center;
+  align-items: center;
 `;
 
 const Main = styled.main`
