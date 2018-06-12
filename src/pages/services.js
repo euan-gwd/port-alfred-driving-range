@@ -8,25 +8,27 @@ const ServicesPage = () => (
   <PageContent>
     <Header />
     <Content>
-      <article>
-        <h3>Operating Hours</h3>
-        <h4>Summer</h4>
-        <p>
-          Monday - Saturday <span>09:00 - 18:00</span>
-        </p>
-        <p>
-          Sunday <span>09:00 - 16:00</span>
-        </p>
-      </article>
-      <article>
-        <h4>Winter</h4>
-        <p>
-          Monday - Saturday <span>09:00 - 16:00</span>
-        </p>
-        <p>
-          Sunday <span>09:00 - 14:00</span>
-        </p>
-      </article>
+      <h3>Operating Hours</h3>
+      <TimesWrapper>
+        <article>
+          <h4>Summer</h4>
+          <p>
+            Monday - Saturday <span>09:00 - 18:00</span>
+          </p>
+          <p>
+            Sunday <span>09:00 - 16:00</span>
+          </p>
+        </article>
+        <article>
+          <h4>Winter</h4>
+          <p>
+            Monday - Saturday <span>09:00 - 16:00</span>
+          </p>
+          <p>
+            Sunday <span>09:00 - 14:00</span>
+          </p>
+        </article>
+      </TimesWrapper>
       <article>
         <h3>Prices</h3>
         <p>R30 per tray (50 balls)</p>
@@ -87,4 +89,11 @@ const Content = styled.section`
   p {
     line-height: 0.5rem;
   }
+`;
+
+const TimesWrapper = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
 `;
