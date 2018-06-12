@@ -38,7 +38,7 @@ const ContactPage = () => (
         <MapContainer
           googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
           loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={<div style={{ height: `200px` }} />}
+          containerElement={<div style={{ height: `30vh` }} />}
           mapElement={<div style={{ height: `100%` }} />}
         />
         <SocialLinkBar>
@@ -66,7 +66,7 @@ export default ContactPage;
 const Container = styled.div`
   padding: 0;
   min-width: 320px;
-  width: 80vw;
+  width: 60vw;
   color: #064614;
   background-color: #f0fff085;
   border: 3px solid #064614;
@@ -75,31 +75,42 @@ const Container = styled.div`
   display: grid;
 
   @media screen and (max-width: 480px) {
-    width: 60vw;
+    width: 80vw;
     padding: 0 0.5rem;
+    font: 16px "'Georgia Bold', Times, serif";
   }
 `;
 
 const NavBar = styled.nav`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 0.5fr;
+  margin: 0;
 `;
 
 const Heading = styled.h2`
   color: #064614;
-  padding: 0.5rem 0 0;
-  justify-self: center;
+  padding: 0.5rem 0 0 0.5rem;
   align-self: center;
   text-transform: uppercase;
   text-decoration: underline;
+
+  @media screen and (max-width: 480px) {
+    padding: 0.5rem 0 0 0.25rem;
+    margin: 0;
+  }
 `;
 
 const NavLink = styled(Link)`
   text-align: right;
   color: #064614;
-  font: 16px "'Georgia Bold', Times, serif";
+  font: 18px "'Georgia Bold', Times, serif";
   text-transform: uppercase;
   padding: 0.25rem 0.5rem 0;
+
+  @media screen and (max-width: 480px) {
+    padding: 0.25rem 0 0 0;
+    font: 16px "'Georgia Bold', Times, serif";
+  }
 `;
 
 const StyledIcon = styled(FontAwesomeIcon)`
@@ -119,10 +130,19 @@ const PageContent = styled.section`
 const ContactFormWrapper = styled.article`
   padding: 0 0.5rem 0.5rem;
   min-width: 50%;
+  width: 50%;
   border-right: 3px solid #064614;
 
-  @media screen and (max-width: 860px) {
+  @media screen and (max-width: 480px) {
     border: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 481px) and (max-width: 860px) {
+    border: 0;
+    padding: 0 0.25rem 0.25rem;
+    min-width: 100%;
   }
 `;
 
@@ -130,6 +150,11 @@ const Form = styled.form`
   display: grid;
   grid-template-rows: repeat(5 minmax(150px, 1fr));
   grid-row-gap: 0.5rem;
+
+  @media screen and (max-width: 480px) {
+    grid-row-gap: 0.125rem;
+    margin: 0;
+  }
 `;
 
 const FormField = styled.div`
@@ -191,9 +216,10 @@ const SocialWrapper = styled.article`
   min-width: 50%;
   display: grid;
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 860px) {
     width: 100%;
-    padding: 0 0.5rem;
+    padding: 0.5rem 0.25rem 0;
+    border-top: 3px solid #064614;
   }
 `;
 

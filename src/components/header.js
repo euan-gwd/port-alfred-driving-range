@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "react-emotion";
-import logo from "../images/logo-alt.png";
+import logo from "../images/logo.png";
 
 const Header = () => (
   <MainLogo>
@@ -24,7 +24,7 @@ const MainLogo = styled.div`
     width: calc(300px / 1.75);
     height: calc(197px / 1.75);
 
-    @media screen and (min-width: 480px) {
+    @media screen and (min-width: 860px) {
       width: 300px;
       height: 197px;
     }
