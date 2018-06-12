@@ -2,15 +2,11 @@ import React from "react";
 import Link from "gatsby-link";
 import styled from "react-emotion";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+import Header from "../components/header.js";
 
 const ServicesPage = () => (
   <PageContent>
-    <NavBar>
-      <Heading>Services</Heading>
-      <NavLink to="/">
-        <StyledIcon icon={["far", "window-close"]} size="2x" color="#064614" />
-      </NavLink>
-    </NavBar>
+    <Header />
     <Content>
       <article>
         <h3>Operating Hours</h3>
@@ -37,6 +33,11 @@ const ServicesPage = () => (
         <p>R150 per lesson (Private Coaching)</p>
       </article>
     </Content>
+    <NavBar>
+      <NavLink to="/">
+        <StyledIcon icon={["far", "window-close"]} size="2x" color="#064614" />
+      </NavLink>
+    </NavBar>
   </PageContent>
 );
 
@@ -56,17 +57,7 @@ const PageContent = styled.div`
 
 const NavBar = styled.nav`
   display: grid;
-  grid-template-columns: 1fr 0.02fr;
-  margin: 0;
-`;
-
-const Heading = styled.h2`
-  color: #064614;
-  padding: 0.5rem 0 0 0;
-  text-align: center;
-  align-self: center;
-  text-transform: uppercase;
-  text-decoration: underline;
+  margin: 0 auto;
 `;
 
 const NavLink = styled(Link)`
