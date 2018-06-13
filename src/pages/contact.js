@@ -102,13 +102,13 @@ const Container = styled.div`
   background-color: #f0fff085;
   border: 3px solid #064614;
   border-radius: 2px;
-  font: 18px "'Georgia Bold', Times, serif";
+  font: 1rem "'Georgia Bold', Times, serif";
   display: grid;
 
   @media screen and (max-width: 480px) {
     width: 80vw;
-    padding: 0 0.5rem;
-    font: 16px "'Georgia Bold', Times, serif";
+    padding: 0 0.25rem;
+    font: 0.8rem "'Georgia Bold', Times, serif";
   }
 `;
 
@@ -134,13 +134,13 @@ const Heading = styled.h2`
 const NavLink = styled(Link)`
   text-align: right;
   color: #064614;
-  font: 18px "'Georgia Bold', Times, serif";
+  font: 1rem "'Georgia Bold', Times, serif";
   text-transform: uppercase;
   padding: 0.25rem 0.5rem 0;
 
   @media screen and (max-width: 480px) {
     padding: 0.25rem 0 0 0;
-    font: 16px "'Georgia Bold', Times, serif";
+    font: 0.8rem "'Georgia Bold', Times, serif";
   }
 `;
 
@@ -190,13 +190,13 @@ const Form = styled.form`
 
 const FormField = styled.div`
   display: grid;
-  font: 18px "'Georgia Bold', Times, serif";
+  font: 1rem "'Georgia Bold', Times, serif";
   color: #064614;
 
   label {
     grid-row: 1;
     margin: 0.5rem 0 -0.2rem;
-    font: bold 18px "'Georgia Bold', Times, serif";
+    font: bold 1rem "'Georgia Bold', Times, serif";
   }
 
   input {
@@ -232,7 +232,7 @@ const FormActions = styled.div`
 
   input[type="submit"],
   input[type="reset"] {
-    font: bold 18px "'Georgia Bold', Times, serif";
+    font: bold 1rem "'Georgia Bold', Times, serif";
     color: #064614;
     text-transform: uppercase;
     background-color: transparent;
@@ -269,7 +269,7 @@ const SocialLinkBar = styled.div`
 
 const SocialLink = styled.a`
   color: #064614;
-  font: 18px "'Georgia Bold', Times, serif";
+  font: 1rem "'Georgia Bold', Times, serif";
 
   :hover {
     color: #678c68;

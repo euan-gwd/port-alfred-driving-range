@@ -55,10 +55,11 @@ const Container = styled.div`
   width: 60vw;
   display: grid;
   color: #064614;
-  font: 18px "'Georgia Bold', Times, serif";
+  font: 1rem "'Georgia Bold', Times, serif";
 
   @media screen and (max-width: 480px) {
-    width: 90vw;
+    width: 100vw;
+    padding: 0.25rem;
   }
 `;
 
@@ -71,6 +72,10 @@ const Intro = styled.section`
   text-align: center;
   margin: 0;
   padding: 0.5rem;
+
+  @media screen and (max-width: 480px) {
+    padding: 0.25rem;
+  }
 `;
 
 const NavBar = styled.nav`
@@ -89,7 +94,7 @@ const NavBar = styled.nav`
 const NavLink = styled(Link)`
   text-align: center;
   color: #064614;
-  font: bold 18px "'Georgia Bold', Times, serif";
+  font: bold 1rem "'Georgia Bold', Times, serif";
   text-transform: uppercase;
   padding: 0.5rem;
 

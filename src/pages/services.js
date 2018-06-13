@@ -80,8 +80,13 @@ const Container = styled.div`
   background-color: #f0fff085;
   border: 3px solid #064614;
   border-radius: 2px;
-  font: 18px "'Georgia Bold', Times, serif";
+  font: 1rem "'Georgia Bold', Times, serif";
   display: grid;
+
+  @media screen and (max-width: 480px) {
+    width: 100vw;
+    padding: 0.25rem;
+  }
 `;
 
 const BrandLogo = styled.img`
@@ -102,7 +107,7 @@ const NavBar = styled.nav`
 const NavLink = styled(Link)`
   text-align: right;
   color: #064614;
-  font: bold 16px "'Georgia Bold', Times, serif";
+  font: bold 0.8rem "'Georgia Bold', Times, serif";
   text-transform: uppercase;
   padding: 0.5rem;
 `;
@@ -118,13 +123,25 @@ const PageContent = styled.section`
   margin: 0;
   padding: 0.5rem;
 
+  @media screen and (max-width: 480px) {
+    padding: 0.25rem;
+  }
+
   h3 {
     padding: 0.25rem 0;
     text-transform: uppercase;
+
+    @media screen and (max-width: 480px) {
+      padding: 0.125rem 0;
+    }
   }
 
   p {
     line-height: 0.5rem;
+
+    @media screen and (max-width: 480px) {
+      line-height: 0.25rem;
+    }
   }
 `;
 

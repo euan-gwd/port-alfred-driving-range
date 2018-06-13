@@ -76,4 +76,8 @@ const Main = styled.main`
   position: relative;
   z-index: 2;
   display: flex;
+
+  @media screen and (max-width: 480px) {
+    margin: 0 0 0.5rem;
+  }
 `;
