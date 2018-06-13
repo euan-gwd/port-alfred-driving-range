@@ -8,12 +8,15 @@ import Logo from "../images/logo.png";
 
 class ServicesPage extends Component {
   componentDidMount = () => {
-    this.container.animate([{ opacity: 0 }, { opacity: 1 }], {
-      duration: 300,
-      fill: "forwards",
-      easing: "ease-in-out",
-      iterations: 1,
-    });
+    this.container.animate(
+      [{ transform: "translateY(-800px)" }, { transform: "translateY(0px)" }],
+      {
+        duration: 300,
+        fill: "forwards",
+        easing: "ease-in-out",
+        iterations: 1,
+      }
+    );
   };
 
   render() {
