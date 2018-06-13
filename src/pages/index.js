@@ -1,34 +1,38 @@
-import React from "react";
+import React, { Component } from "react";
 import Link from "gatsby-link";
 import styled from "react-emotion";
 import Header from "../components/header.js";
 
-const IndexPage = () => (
-  <Container>
-    <Header />
-    <Intro>
-      <p>
-        Nestled amongst the rolling hills of the sleepy town of Port Alfred,
-        lies a driving range that shares its namesake. Come join us for a great
-        day out, bring your own golf clubs, hit some golf balls. <br /> Golf
-        Clubs are also available for hire as well.
-      </p>
-      <p>
-        Our conversant and neighborly golf pro Colin Mavuso is on hand to
-        provide conversation and guidance. Private lessons are available on
-        request.
-      </p>
-      <p>
-        The Port Alfred Driving Range is conveniently located behind the
-        Rosehill Mall.
-      </p>
-    </Intro>
-    <NavBar>
-      <NavLink to="/services/">Services</NavLink>
-      <NavLink to="/contact/">Contact</NavLink>
-    </NavBar>
-  </Container>
-);
+class IndexPage extends Component {
+  render() {
+    return (
+      <Container>
+        <Header />
+        <Intro>
+          <p>
+            Nestled amongst the rolling hills of the sleepy town of Port Alfred,
+            lies a driving range that shares its namesake. Come join us for a
+            great day out, bring your own golf clubs, hit some golf balls.
+            <br /> Golf Clubs are also available for hire as well.
+          </p>
+          <p>
+            Our conversant and neighborly golf pro Colin Mavuso is on hand to
+            provide conversation and guidance. Private lessons are available on
+            request.
+          </p>
+          <p>
+            The Port Alfred Driving Range is conveniently located behind the
+            Rosehill Mall.
+          </p>
+        </Intro>
+        <NavBar>
+          <NavLink to="/services/">Services</NavLink>
+          <NavLink to="/contact/">Contact</NavLink>
+        </NavBar>
+      </Container>
+    );
+  }
+}
 
 export default IndexPage;
 

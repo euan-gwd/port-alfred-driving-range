@@ -1,48 +1,55 @@
-import React from "react";
+import React, { Component } from "react";
 import Link from "gatsby-link";
 import styled from "react-emotion";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-// import Header from "../components/header.js";
 import Logo from "../images/logo.png";
 
-const ServicesPage = () => (
-  <PageContent>
-    <BrandLogo src={Logo} />
-    <Content>
-      <h3>Operating Hours</h3>
-      <TimesWrapper>
-        <article>
-          <h4>Summer</h4>
-          <p>
-            Monday - Saturday <span>09:00 - 18:00</span>
-          </p>
-          <p>
-            Sunday <span>09:00 - 16:00</span>
-          </p>
-        </article>
-        <article>
-          <h4>Winter</h4>
-          <p>
-            Monday - Saturday <span>09:00 - 16:00</span>
-          </p>
-          <p>
-            Sunday <span>09:00 - 14:00</span>
-          </p>
-        </article>
-      </TimesWrapper>
-      <article>
-        <h3>Prices</h3>
-        <p>R30 per tray (50 balls)</p>
-        <p>R150 per lesson (Private Coaching)</p>
-      </article>
-    </Content>
-    <NavBar>
-      <NavLink to="/">
-        <StyledIcon icon={["far", "window-close"]} size="2x" color="#064614" />
-      </NavLink>
-    </NavBar>
-  </PageContent>
-);
+class ServicesPage extends Component {
+  render() {
+    return (
+      <PageContent>
+        <BrandLogo src={Logo} />
+        <Content>
+          <h3>Operating Hours</h3>
+          <TimesWrapper>
+            <article>
+              <h4>Summer</h4>
+              <p>
+                Monday - Saturday <span>09:00 - 18:00</span>
+              </p>
+              <p>
+                Sunday <span>09:00 - 16:00</span>
+              </p>
+            </article>
+            <article>
+              <h4>Winter</h4>
+              <p>
+                Monday - Saturday <span>09:00 - 16:00</span>
+              </p>
+              <p>
+                Sunday <span>09:00 - 14:00</span>
+              </p>
+            </article>
+          </TimesWrapper>
+          <article>
+            <h3>Prices</h3>
+            <p>R30 per tray (50 balls)</p>
+            <p>R150 per lesson (Private Coaching)</p>
+          </article>
+        </Content>
+        <NavBar>
+          <NavLink to="/">
+            <StyledIcon
+              icon={["far", "window-close"]}
+              size="2x"
+              color="#064614"
+            />
+          </NavLink>
+        </NavBar>
+      </PageContent>
+    );
+  }
+}
 
 export default ServicesPage;
 

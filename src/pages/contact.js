@@ -1,65 +1,77 @@
-import React from "react";
+import React, { Component } from "react";
 import Link from "gatsby-link";
 import styled from "react-emotion";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import { MapContainer } from "../components/MapContainer.js";
 
-const ContactPage = () => (
-  <Container>
-    <NavBar>
-      <Heading>Contact</Heading>
-      <NavLink to="/">
-        <StyledIcon icon={["far", "window-close"]} size="2x" color="#064614" />
-      </NavLink>
-    </NavBar>
-    <PageContent>
-      <ContactFormWrapper>
-        <Form action="#">
-          <FormField>
-            <label htmlFor="name">Name:</label>
-            <input type="text" name="name" id="name" />
-          </FormField>
-          <FormField>
-            <label htmlFor="email">Email:</label>
-            <input type="text" name="email" id="email" />
-          </FormField>
-          <FormField>
-            <label htmlFor="message">Message:</label>
-            <textarea name="message" id="message" />
-          </FormField>
-          <div data-netlify-recaptcha />
-          <FormActions>
-            <input type="submit" value="Send Message" />
-            <input type="reset" value="Reset" />
-          </FormActions>
-        </Form>
-      </ContactFormWrapper>
-      <SocialWrapper>
-        <MapContainer
-          googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
-          loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={<div style={{ height: `30vh` }} />}
-          mapElement={<div style={{ height: `100%` }} />}
-        />
-        <SocialLinkBar>
-          <SocialLink href="https://www.facebook.com/Port-Alfred-Driving-Range-1242566729088163/">
+class ContactPage extends Component {
+  render() {
+    return (
+      <Container>
+        <NavBar>
+          <Heading>Contact</Heading>
+          <NavLink to="/">
             <StyledIcon
-              icon={["fab", "facebook-square"]}
+              icon={["far", "window-close"]}
               size="2x"
               color="#064614"
             />
-          </SocialLink>
-          <SocialLink href="#">
-            <StyledIcon icon={["fab", "instagram"]} size="2x" color="#064614" />
-          </SocialLink>
-          <SocialLink href="tel:+27735077260‬">
-            <StyledIcon icon="phone-square" size="2x" color="#064614" />
-          </SocialLink>
-        </SocialLinkBar>
-      </SocialWrapper>
-    </PageContent>
-  </Container>
-);
+          </NavLink>
+        </NavBar>
+        <PageContent>
+          <ContactFormWrapper>
+            <Form action="#">
+              <FormField>
+                <label htmlFor="name">Name:</label>
+                <input type="text" name="name" id="name" />
+              </FormField>
+              <FormField>
+                <label htmlFor="email">Email:</label>
+                <input type="text" name="email" id="email" />
+              </FormField>
+              <FormField>
+                <label htmlFor="message">Message:</label>
+                <textarea name="message" id="message" />
+              </FormField>
+              <div data-netlify-recaptcha />
+              <FormActions>
+                <input type="submit" value="Send Message" />
+                <input type="reset" value="Reset" />
+              </FormActions>
+            </Form>
+          </ContactFormWrapper>
+          <SocialWrapper>
+            <MapContainer
+              googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+              loadingElement={<div style={{ height: `100%` }} />}
+              containerElement={<div style={{ height: `30vh` }} />}
+              mapElement={<div style={{ height: `100%` }} />}
+            />
+            <SocialLinkBar>
+              <SocialLink href="https://www.facebook.com/Port-Alfred-Driving-Range-1242566729088163/">
+                <StyledIcon
+                  icon={["fab", "facebook-square"]}
+                  size="2x"
+                  color="#064614"
+                />
+              </SocialLink>
+              <SocialLink href="#">
+                <StyledIcon
+                  icon={["fab", "instagram"]}
+                  size="2x"
+                  color="#064614"
+                />
+              </SocialLink>
+              <SocialLink href="tel:+27735077260‬">
+                <StyledIcon icon="phone-square" size="2x" color="#064614" />
+              </SocialLink>
+            </SocialLinkBar>
+          </SocialWrapper>
+        </PageContent>
+      </Container>
+    );
+  }
+}
 
 export default ContactPage;
 
