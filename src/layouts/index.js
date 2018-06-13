@@ -78,4 +78,5 @@ const Main = styled.main`
   padding: 0;
   position: relative;
   z-index: 2;
+  display: flex;
 `;
