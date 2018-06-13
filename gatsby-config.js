@@ -33,12 +33,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: ``,
-      },
-    },
-    {
       resolve: `gatsby-plugin-emotion`,
       options: {
         sourceMap: true,
