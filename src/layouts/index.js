@@ -21,10 +21,7 @@ const Layout = ({ children, data }) => (
   <Wrapper>
     <Helmet
       title={data.site.siteMetadata.title}
-      meta={[
-        { name: "description", content: "Sample" },
-        { name: "keywords", content: "sample, something" },
-      ]}
+      meta={[{ name: "description", content: "Port ALfred Driving Range" }]}
     />
     <Main>{children()}</Main>
     <Img
@@ -55,7 +52,7 @@ export const queryname = graphql`
         title
       }
     }
-    background: imageSharp(id: { regex: "/images/bg.jpg/" }) {
+    background: imageSharp(id: { regex: "/bg.jpg/" }) {
       sizes(maxWidth: 1240) {
         ...GatsbyImageSharpSizes
       }
