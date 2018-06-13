@@ -52,6 +52,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/euan-gwd/create-gatsby-site-starter"
-  }
+    "url": "https://github.com/euan-gwd/port-alfred-driving-range"
+  },
+  "browserslist": [
+    "> 1%",
+    "IE >= 9",
+    "last 2 versions"
+  ]
 }
