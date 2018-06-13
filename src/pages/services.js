@@ -9,7 +9,10 @@ import Logo from "../images/logo.png";
 class ServicesPage extends Component {
   componentDidMount = () => {
     this.container.animate(
-      [{ transform: "translateY(-800px)" }, { transform: "translateY(0px)" }],
+      [
+        { transform: "translateY(-800px)", opacity: 0 },
+        { transform: "translateY(0px)", opacity: 1 },
+      ],
       {
         duration: 300,
         fill: "forwards",

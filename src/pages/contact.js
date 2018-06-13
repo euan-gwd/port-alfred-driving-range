@@ -9,7 +9,10 @@ import { MapContainer } from "../components/MapContainer.js";
 class ContactPage extends Component {
   componentDidMount = () => {
     this.container.animate(
-      [{ transform: "translateY(-800px)" }, { transform: "translateY(0px)" }],
+      [
+        { transform: "translateY(-800px)", opacity: 0 },
+        { transform: "translateY(0px)", opacity: 1 },
+      ],
       {
         duration: 300,
         fill: "forwards",
@@ -199,6 +202,8 @@ const FormField = styled.div`
   input {
     grid-row: 2;
     color: #064614;
+    background: transparent;
+    border: 2px solid #064614;
     outline: none;
 
     :focus {
@@ -210,6 +215,9 @@ const FormField = styled.div`
   textarea {
     color: #064614;
     outline: none;
+    background: transparent;
+    border: 2px solid #064614;
+    height: 15vh;
 
     :focus {
       color: #678c68;
@@ -231,6 +239,7 @@ const FormActions = styled.div`
     border: 3px solid transparent;
     margin: 0;
     padding: 0.125rem 0.25rem 0;
+    outline: none;
 
     :hover {
       color: #678c68;
