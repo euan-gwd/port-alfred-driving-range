@@ -1,15 +1,28 @@
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
+
 import Link from "gatsby-link";
 import styled from "react-emotion";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import Logo from "../images/logo.png";
 
 class ServicesPage extends Component {
+  componentDidMount = () => {
+    this.container.animate([{ opacity: 0 }, { opacity: 1 }], {
+      duration: 300,
+      fill: "forwards",
+      easing: "ease-in-out",
+      iterations: 1,
+    });
+  };
+
   render() {
     return (
-      <PageContent>
+      <Container
+        ref={container => (this.container = ReactDOM.findDOMNode(container))}
+      >
         <BrandLogo src={Logo} />
-        <Content>
+        <PageContent>
           <h3>Operating Hours</h3>
           <TimesWrapper>
             <article>
@@ -36,7 +49,7 @@ class ServicesPage extends Component {
             <p>R30 per tray (50 balls)</p>
             <p>R150 per lesson (Private Coaching)</p>
           </article>
-        </Content>
+        </PageContent>
         <NavBar>
           <NavLink to="/">
             <StyledIcon
@@ -46,14 +59,14 @@ class ServicesPage extends Component {
             />
           </NavLink>
         </NavBar>
-      </PageContent>
+      </Container>
     );
   }
 }
 
 export default ServicesPage;
 
-const PageContent = styled.div`
+const Container = styled.div`
   padding: 0;
   min-width: 320px;
   width: 60vw;
@@ -94,7 +107,7 @@ const StyledIcon = styled(FontAwesomeIcon)`
   }
 `;
 
-const Content = styled.section`
+const PageContent = styled.section`
   text-align: center;
   margin: 0;
   padding: 0.5rem;

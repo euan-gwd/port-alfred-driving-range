@@ -1,13 +1,26 @@
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
+
 import Link from "gatsby-link";
 import styled from "react-emotion";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import { MapContainer } from "../components/MapContainer.js";
 
 class ContactPage extends Component {
+  componentDidMount = () => {
+    this.container.animate([{ opacity: 0 }, { opacity: 1 }], {
+      duration: 300,
+      fill: "forwards",
+      easing: "ease-in-out",
+      iterations: 1,
+    });
+  };
+
   render() {
     return (
-      <Container>
+      <Container
+        ref={container => (this.container = ReactDOM.findDOMNode(container))}
+      >
         <NavBar>
           <Heading>Contact</Heading>
           <NavLink to="/">
