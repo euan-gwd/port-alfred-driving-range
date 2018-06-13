@@ -13,7 +13,6 @@ const NotFoundPage = () => (
 export default NotFoundPage;
 
 const NavLink = styled(Link)`
-  /* text-align: center; */
   color: #064614;
   font: bold 18px "'Georgia Bold', Times, serif";
   text-transform: uppercase;
