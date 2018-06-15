@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-
 import Link from "gatsby-link";
 import styled from "react-emotion";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import { MapContainer } from "../components/MapContainer.js";
+import Img from "gatsby-image";
 
 const encode = data => {
   return Object.keys(data)
@@ -112,11 +111,12 @@ class ContactPage extends Component {
             </Form>
           </ContactFormWrapper>
           <SocialWrapper>
-            <MapContainer
-              googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
-              loadingElement={<div style={{ height: `100%` }} />}
-              containerElement={<div style={{ height: `30vh` }} />}
-              mapElement={<div style={{ height: `100%` }} />}
+            <Img
+              style={{
+                width: "100%",
+                height: "35.5vh",
+              }}
+              sizes={this.props.data.map.sizes}
             />
             <SocialLinkBar>
               <SocialLink href="https://www.facebook.com/Port-Alfred-Driving-Range-1242566729088163/">
@@ -145,6 +145,16 @@ class ContactPage extends Component {
 }
 
 export default ContactPage;
+
+export const query = graphql`
+  query SiteMapQuery {
+    map: imageSharp(id: { regex: "/map.png/" }) {
+      sizes(maxWidth: 1240) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+  }
+`;
 
 const Container = styled.div`
   padding: 0;
