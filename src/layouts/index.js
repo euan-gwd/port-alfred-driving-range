@@ -7,13 +7,16 @@ import "./index.css";
 
 import fontawesome from "@fortawesome/fontawesome";
 import faWindowClose from "@fortawesome/fontawesome-free-regular/faWindowClose";
+import faCheckSquare from "@fortawesome/fontawesome-free-regular/faCheckSquare";
 import faPhoneSquare from "@fortawesome/fontawesome-free-solid/faPhoneSquare";
 import faFacebookSquare from "@fortawesome/fontawesome-free-brands/faFacebookSquare";
 import faInstagram from "@fortawesome/fontawesome-free-brands/faInstagram";
+
 fontawesome.library.add(
   faFacebookSquare,
   faInstagram,
   faWindowClose,
+  faCheckSquare,
   faPhoneSquare
 );
 

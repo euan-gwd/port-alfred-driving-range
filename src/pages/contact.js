@@ -4,6 +4,7 @@ import Link from "gatsby-link";
 import styled from "react-emotion";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import Img from "gatsby-image";
+import Success from "../components/success.js";
 
 const encode = data => {
   return Object.keys(data)
@@ -16,6 +17,7 @@ class ContactPage extends Component {
     name: "",
     email: "",
     message: "",
+    formSubmitted: false,
   };
 
   componentDidMount = () => {
@@ -34,22 +36,33 @@ class ContactPage extends Component {
   };
 
   handleSubmit = e => {
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...this.state }),
-    })
-      .then(() => alert("Success!"))
-      .catch(error => alert(error));
-    this.setState({ name: "", email: "", message: "" });
-    reset();
+    const { name, email } = this.state;
+    let nameValid = false;
+    let emailValid = false;
+
+    // Simple Form Validation
+    /^[a-zA-Z-_ ]{3,30}$/.test(name) ? (nameValid = true) : (nameValid = false);
+
+    /[\w\-._]+@[\w\-._]+\.\w{2,10}/.test(email)
+      ? (emailValid = true)
+      : (emailValid = false);
+
+    if (nameValid && emailValid) {
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", ...this.state }),
+      }).catch(error => console.error(error));
+      this.setState({ name: "", email: "", message: "", formSubmitted: true });
+    }
+
     e.preventDefault();
   };
 
   handleChange = e => this.setState({ [e.target.name]: e.target.value });
 
   render() {
-    const { name, email, message } = this.state;
+    const { name, email, message, formSubmitted } = this.state;
     return (
       <Container
         ref={container => (this.container = ReactDOM.findDOMNode(container))}
@@ -66,50 +79,57 @@ class ContactPage extends Component {
         </NavBar>
         <PageContent>
           <ContactFormWrapper>
-            <Form
-              name="contact"
-              method="post"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
-              onSubmit={this.handleSubmit}
-            >
-              <FormField>
-                <label htmlFor="name">Name:</label>
+            {formSubmitted ? (
+              <Success />
+            ) : (
+              <Form
+                name="contact"
+                method="post"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                onSubmit={this.handleSubmit}
+              >
+                <FormField>
+                  <label htmlFor="name">Name:</label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={name}
+                    onChange={this.handleChange}
+                    id="name"
+                  />
+                </FormField>
+                <FormField>
+                  <label htmlFor="email">Email:</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={email}
+                    onChange={this.handleChange}
+                    id="email"
+                  />
+                </FormField>
+                <FormField>
+                  <label htmlFor="message">Message:</label>
+                  <textarea
+                    name="message"
+                    value={message}
+                    onChange={this.handleChange}
+                    id="message"
+                  />
+                </FormField>
                 <input
-                  type="text"
-                  name="name"
-                  value={name}
-                  onChange={this.handleChange}
-                  id="name"
+                  type="hidden"
+                  name="form-name"
+                  value="contact"
                   required
                 />
-              </FormField>
-              <FormField>
-                <label htmlFor="email">Email:</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={email}
-                  onChange={this.handleChange}
-                  id="email"
-                  required
-                />
-              </FormField>
-              <FormField>
-                <label htmlFor="message">Message:</label>
-                <textarea
-                  name="message"
-                  value={message}
-                  onChange={this.handleChange}
-                  id="message"
-                />
-              </FormField>
-              <input type="hidden" name="form-name" value="contact" required />
-              <FormActions>
-                <input type="submit" value="Send Message" />
-                <input type="reset" value="Reset" />
-              </FormActions>
-            </Form>
+                <FormActions>
+                  <input type="submit" value="Send Message" />
+                  <input type="reset" value="Reset" />
+                </FormActions>
+              </Form>
+            )}
           </ContactFormWrapper>
           <SocialWrapper>
             <Img
