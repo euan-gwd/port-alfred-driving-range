@@ -70,7 +70,7 @@ const Intro = styled.section`
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   text-align: center;
-  margin: 0;
+  margin: 0 auto;
   padding: 0.5rem;
 
   @media screen and (max-width: 480px) {

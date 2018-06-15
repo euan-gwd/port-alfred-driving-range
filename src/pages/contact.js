@@ -6,7 +6,19 @@ import styled from "react-emotion";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import { MapContainer } from "../components/MapContainer.js";
 
+const encode = data => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
+
 class ContactPage extends Component {
+  state = {
+    name: "",
+    email: "",
+    message: "",
+  };
+
   componentDidMount = () => {
     this.container.animate(
       [
@@ -22,7 +34,22 @@ class ContactPage extends Component {
     );
   };
 
+  handleSubmit = e => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...this.state }),
+    })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error));
+
+    e.preventDefault();
+  };
+
+  handleChange = e => this.setState({ [e.target.name]: e.target.value });
+
   render() {
+    const { name, email, message } = this.state;
     return (
       <Container
         ref={container => (this.container = ReactDOM.findDOMNode(container))}
@@ -39,20 +66,45 @@ class ContactPage extends Component {
         </NavBar>
         <PageContent>
           <ContactFormWrapper>
-            <Form action="#">
+            <Form
+              name="contact"
+              method="post"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              onSubmit={this.handleSubmit}
+            >
               <FormField>
                 <label htmlFor="name">Name:</label>
-                <input type="text" name="name" id="name" />
+                <input
+                  type="text"
+                  name="name"
+                  value={name}
+                  onChange={this.handleChange}
+                  id="name"
+                  required
+                />
               </FormField>
               <FormField>
                 <label htmlFor="email">Email:</label>
-                <input type="text" name="email" id="email" />
+                <input
+                  type="email"
+                  name="email"
+                  value={email}
+                  onChange={this.handleChange}
+                  id="email"
+                  required
+                />
               </FormField>
               <FormField>
                 <label htmlFor="message">Message:</label>
-                <textarea name="message" id="message" />
+                <textarea
+                  name="message"
+                  value={message}
+                  onChange={this.handleChange}
+                  id="message"
+                />
               </FormField>
-              <div data-netlify-recaptcha />
+              <input type="hidden" name="form-name" value="contact" required />
               <FormActions>
                 <input type="submit" value="Send Message" />
                 <input type="reset" value="Reset" />
