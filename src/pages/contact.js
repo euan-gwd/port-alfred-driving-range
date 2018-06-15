@@ -118,6 +118,7 @@ class ContactPage extends Component {
               }}
               sizes={this.props.data.map.sizes}
             />
+            <span>R72, Port Alfred, 6170</span>
             <SocialLinkBar>
               <SocialLink href="https://www.facebook.com/Port-Alfred-Driving-Range-1242566729088163/">
                 <StyledIcon
@@ -133,7 +134,7 @@ class ContactPage extends Component {
                   color="#064614"
                 />
               </SocialLink>
-              <SocialLink href="tel:+27735077260‬">
+              <SocialLink href="tel: +27735077260">
                 <StyledIcon icon="phone-square" size="2x" color="#064614" />
               </SocialLink>
             </SocialLinkBar>
@@ -314,6 +315,10 @@ const SocialWrapper = styled.article`
   padding: 0 0.5rem;
   min-width: 50%;
   display: grid;
+
+  span {
+    text-align: center;
+  }
 
   @media screen and (max-width: 860px) {
     width: 100%;
