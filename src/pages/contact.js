@@ -39,11 +39,10 @@ class ContactPage extends Component {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...this.state }),
     })
-      .then(() => {
-        alert("Success!");
-        this.setState({ name: "", email: "", message: "" });
-      })
+      .then(() => alert("Success!"))
       .catch(error => alert(error));
+    this.setState({ name: "", email: "", message: "" });
+    reset();
     e.preventDefault();
   };
 
