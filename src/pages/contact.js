@@ -279,7 +279,7 @@ const FormField = styled.div`
 
   label {
     grid-row: 1;
-    margin: 0.5rem 0 -0.2rem;
+    margin: 0.5rem 0 0;
     font: bold 1rem "'Georgia Bold', Times, serif";
   }
 
