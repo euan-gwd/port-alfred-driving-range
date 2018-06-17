@@ -281,6 +281,10 @@ const FormField = styled.div`
     grid-row: 1;
     margin: 0.5rem 0 0;
     font: bold 1rem "'Georgia Bold', Times, serif";
+
+    @media screen and (max-width: 480px) {
+      margin: 0.25rem 0 0;
+    }
   }
 
   input {
@@ -343,7 +347,7 @@ const SocialWrapper = styled.article`
 
   @media screen and (max-width: 860px) {
     width: 100%;
-    padding: 0.5rem 0.25rem 0;
+    padding: 0.25rem 0.125rem 0;
     border-top: 3px solid #064614;
   }
 `;
