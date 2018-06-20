@@ -191,7 +191,7 @@ const Container = styled.div`
 
   @media screen and (max-width: 480px) {
     width: 80vw;
-    padding: 0 0.25rem;
+    padding: 0.25rem;
     font: 0.8rem "'Georgia Bold', Times, serif";
   }
 `;
@@ -267,7 +267,7 @@ const Form = styled.form`
   grid-row-gap: 0.5rem;
 
   @media screen and (max-width: 480px) {
-    grid-row-gap: 0.125rem;
+    grid-row-gap: 0;
     margin: 0;
   }
 `;
@@ -357,6 +357,10 @@ const SocialLinkBar = styled.div`
   justify-content: space-around;
   align-items: center;
   padding: 0.5rem 0;
+
+  @media screen and (max-width: 480px) {
+    padding: 0.25rem 0;
+  }
 `;
 
 const SocialLink = styled.a`

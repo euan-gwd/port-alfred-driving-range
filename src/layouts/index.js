@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import styled from "react-emotion";
-import Img from "gatsby-image";
+import Image from "gatsby-image";
 import "./index.css";
 
 import fontawesome from "@fortawesome/fontawesome";
@@ -27,7 +27,7 @@ const Layout = ({ children, data }) => (
       meta={[{ name: "description", content: "Port ALfred Driving Range" }]}
     />
     <Main>{children()}</Main>
-    <Img
+    <Image
       style={{
         position: "absolute",
         left: 0,
